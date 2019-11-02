@@ -1,5 +1,108 @@
+/*                                                                       布局 */
+/* 上下左右居中 */
 .center-vh{
-  display: grid;
+  display: flex;
   justify-content: center;
-  align-content: center;
+  align-items: center;
 }
+/* 上下居中 & 左右两侧排序 */
+.center-space-between{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+/* 上下居中 & item中间和两侧的距离相同 */
+.center-space-evenly{
+  display: flex;
+  justify-content: space-evenly;
+  align-content: center;
+  border:1px solid green;
+}
+/* 上下居中 */
+.center-vl{
+  display: flex;
+  align-items: center;
+}
+/* 仅两侧分布 */
+.space-between{
+  display:flex;
+  justify-content: space-between;
+}
+/*                                                                       布局 - 结束*/
+
+/*                                                                       其他*/
+/* 容器宽度设置成100% */
+.box{
+  width:100%;
+}
+/* 隐藏元素 */
+.hide {
+  display: none;
+}
+/*image 默认的宽高 */
+image {
+  width: 100%;
+  height: 100%;
+  vertical-align: middle;
+}
+/*一行出现省略号 */
+.ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+/*两行出现省略号 */
+.ellipsis-2 {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: normal;
+}
+/*三行出现省略号 */
+.ellipsis-3 {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: normal;
+}
+/*                                                                       其他 - 结束*/
+
+/*                                                                       定位 */
+/*相对定位 */
+.pr {
+  position: relative;
+}
+/*绝对定位 左上 */
+.palt {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 1;
+}
+/*绝对定位 右上 */
+.part {
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 1;
+}
+/*相对定位 左上 */
+.pflt {
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 1;
+}
+/*相对定位 左下 */
+.pflb {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  z-index: 1;
+  width:100%;
+}
+/*                                                                       定位 - 结束 */

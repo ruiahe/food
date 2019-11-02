@@ -1,14 +1,220 @@
 <!--index.wxml-->
-<view class="container">
-  <navigate></navigate> 
-  <!-- <view class="userinfo">
-    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
-    <block wx:else>
-      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
-      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
-    </block>
+<view>
+  <!-- 顶部导航 -->
+  <navigate class="navigate"></navigate>
+   <!-- 定位部分 -->
+  <view class="location-user container center-space-between">
+      <view class="location center-space-between">
+          <image class="location-icon1" src="../../common/images/index/map-pin-2-line@2x.png"></image>
+          <text>安航企业中心</text>
+          <image class="location-icon2" src="../../common/images/index/ico_enter@2x.png"></image>
+      </view>
+      <view class="user center-vh hasRed">
+          <view class="user-box center-space-between">
+              <image class="user-icon" src="../../common/images/index/user@2x.png"></image>
+              <text>我的</text>
+          </view>
+      </view>
   </view>
-  <view class="usermotto">
-    <text class="user-motto">{{motto}}</text>
-  </view> -->
+  <!-- 搜索框 -->
+  <view class="search-box {{searchObj&&searchObj['isTrue']?'sticky':''}}">
+      <input class="search" placeholder="搜索菜品"></input>
+  </view>
+  <!-- 轮播部分 -->
+  <swiper class="swiper container" indicator-dots="true" autoplay="true" interval="3000" duration="500" easing-function="linear">
+      <block wx:for="{{imgs}}" :for-item="item" wx:key="*this">
+          <swiper-item>
+            <image src="{{item}}"></image>
+          </swiper-item>
+      </block>
+  </swiper>
+  <!-- 列表部分 -->
+  <view class="content space-between {{contentObj&&contentObj['isTrue']?'sticky':''}}">
+    <!-- 竖导航 -->
+    <navigator class="content-vertical">
+        <view class="center-vh content-item active">
+            <view class="center-space-between">
+                <image class="content-icon1" src="../../common/images/index/fire.png"></image>
+                <text>特价</text>
+            </view>
+        </view>
+        <view class="center-vh content-item">
+            <view class="center-space-between">
+                <image class="content-icon2" src="../../common/images/index/star.png"></image>
+                <text class="ellipsis-2">精品</text>
+            </view>
+        </view>
+        <view class="center-vh content-item">
+            <text class="ellipsis-2">叶菜类</text>
+        </view>
+        <view class="center-vh content-item">
+            <text class="ellipsis-2">根茎类</text>
+        </view>
+        <view class="center-vh content-item">
+            <text class="ellipsis-2">菌菇类换行情况菌菇类换行情况</text>
+        </view>
+        <view class="center-vh content-item">
+            <text class="ellipsis-2">瓜果类</text>
+        </view>
+        <view class="center-vh content-item">
+            <text class="ellipsis-2">豆类</text>
+        </view>
+        <view class="center-vh content-item">
+            <text class="ellipsis-2">豆制品</text>
+        </view>
+    </navigator>
+    <view class='content-list'>
+        <!-- 横向导航 -->
+        <navigator class="nav-tab center-space-between">
+            <view class="active">特价</view>
+            <view>全部</view>
+            <view>新品</view>
+            <view>价格</view>
+            <view>销量</view>
+        </navigator>
+        <view class="list">
+            <view class="list-item center-space-between">
+                <view class="item-img"></view>
+                <view class="item-right center-space-between">
+                    <view class="item-detail">
+                        <view class="detail-title ellipsis-2">山东当季大白菜过冬必备白菜</view>
+                        <view class="detail-txt">
+                            <text class="detail-price">￥4</text>
+                            <text class="detail-weight">500g</text>
+                            <text class="detail-del">￥5.99</text>
+                        </view>
+                    </view>
+                    <image src='../../common/images/index/add.png'></image>
+                </view>
+            </view>
+            <view class="list-item center-space-between">
+                <view class="item-img"></view>
+                <view class="item-right center-space-between">
+                    <view class="item-detail">
+                        <view class="detail-title ellipsis-2">山东当季大白菜过冬必备白菜</view>
+                        <view class="detail-txt">
+                            <text class="detail-price">￥4</text>
+                            <text class="detail-weight">500g</text>
+                            <text class="detail-del">￥5.99</text>
+                        </view>
+                    </view>
+                    <image src='../../common/images/index/add.png'></image>
+                </view>
+            </view>
+            <view class="list-item center-space-between">
+                <view class="item-img"></view>
+                <view class="item-right center-space-between">
+                    <view class="item-detail">
+                        <view class="detail-title ellipsis-2">山东当季大白菜过冬必备白菜</view>
+                        <view class="detail-txt">
+                            <text class="detail-price">￥4</text>
+                            <text class="detail-weight">500g</text>
+                            <text class="detail-del">￥5.99</text>
+                        </view>
+                    </view>
+                    <image src='../../common/images/index/add.png'></image>
+                </view>
+            </view>
+            <view class="list-item center-space-between">
+                <view class="item-img"></view>
+                <view class="item-right center-space-between">
+                    <view class="item-detail">
+                        <view class="detail-title ellipsis-2">山东当季大白菜过冬必备白菜</view>
+                        <view class="detail-txt">
+                            <text class="detail-price">￥4</text>
+                            <text class="detail-weight">500g</text>
+                            <text class="detail-del">￥5.99</text>
+                        </view>
+                    </view>
+                    <image src='../../common/images/index/add.png'></image>
+                </view>
+            </view>
+            <view class="list-item center-space-between">
+                <view class="item-img"></view>
+                <view class="item-right center-space-between">
+                    <view class="item-detail">
+                        <view class="detail-title ellipsis-2">山东当季大白菜过冬必备白菜</view>
+                        <view class="detail-txt">
+                            <text class="detail-price">￥4</text>
+                            <text class="detail-weight">500g</text>
+                            <text class="detail-del">￥5.99</text>
+                        </view>
+                    </view>
+                    <image src='../../common/images/index/add.png'></image>
+                </view>
+            </view>
+            <view class="list-item center-space-between">
+                <view class="item-img"></view>
+                <view class="item-right center-space-between">
+                    <view class="item-detail">
+                        <view class="detail-title ellipsis-2">山东当季大白菜过冬必备白菜</view>
+                        <view class="detail-txt">
+                            <text class="detail-price">￥4</text>
+                            <text class="detail-weight">500g</text>
+                            <text class="detail-del">￥5.99</text>
+                        </view>
+                    </view>
+                    <image src='../../common/images/index/add.png'></image>
+                </view>
+            </view>
+            <view class="list-item center-space-between">
+                <view class="item-img"></view>
+                <view class="item-right center-space-between">
+                    <view class="item-detail">
+                        <view class="detail-title ellipsis-2">山东当季大白菜过冬必备白菜</view>
+                        <view class="detail-txt">
+                            <text class="detail-price">￥4</text>
+                            <text class="detail-weight">500g</text>
+                            <text class="detail-del">￥5.99</text>
+                        </view>
+                    </view>
+                    <image src='../../common/images/index/add.png'></image>
+                </view>
+            </view>
+            <view class="list-item center-space-between">
+                <view class="item-img"></view>
+                <view class="item-right center-space-between">
+                    <view class="item-detail">
+                        <view class="detail-title ellipsis-2">山东当季大白菜过冬必备白菜</view>
+                        <view class="detail-txt">
+                            <text class="detail-price">￥4</text>
+                            <text class="detail-weight">500g</text>
+                            <text class="detail-del">￥5.99</text>
+                        </view>
+                    </view>
+                    <image src='../../common/images/index/add.png'></image>
+                </view>
+            </view>
+            <view class="list-item center-space-between">
+                <view class="item-img"></view>
+                <view class="item-right center-space-between">
+                    <view class="item-detail">
+                        <view class="detail-title ellipsis-2">山东当季大白菜过冬必备白菜</view>
+                        <view class="detail-txt">
+                            <text class="detail-price">￥4</text>
+                            <text class="detail-weight">500g</text>
+                            <text class="detail-del">￥5.99</text>
+                        </view>
+                    </view>
+                    <image src='../../common/images/index/add.png'></image>
+                </view>
+            </view>
+        </view>
+    </view>
+  </view>
+  <!-- 底部结算入口 -->
+  <view class="bottom pflb center-space-between">
+      <view class="bottom-img">
+          <image src="../../common/images/index/box.png"></image>
+          <text class="bottom-icon part center-vh">25</text>
+      </view>
+      <view class="bottom-price">
+          <view class="bottom-price-box">
+              <text class="price-rel">￥44.88</text>
+              <text class="price-del">￥54.88</text>
+          </view>
+          <view class="bottom-txt">另需配送费6元/可自取</view>
+      </view>
+      <button class="bottom-btn center-vh">去结算</button>
+  </view>
 </view>
