@@ -1,0 +1,10 @@
+/* pages/common/navigate/navigate.wxss */
+@import "../../../common/style/common.wxss";
+.navigate{
+  position: absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:88rpx;
+  border:1px solid red;
+}

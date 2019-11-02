@@ -1,0 +1,5 @@
+<!--pages/common/navigate.wxml-->
+<!-- <text>pages/common/navigate.wxml</text> -->
+<navigator class="navigate center-vh">
+  <text>佰蔬营</text>
+</navigator>

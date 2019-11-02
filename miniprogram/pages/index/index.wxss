@@ -1,5 +1,13 @@
 /**index.wxss**/
-.userinfo {
+.container{
+  border:1px solid blue;
+}
+.nav{
+  height:88rpx;
+  border:1px solid red;
+}
+
+/* .userinfo {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -18,4 +26,4 @@
 
 .usermotto {
   margin-top: 200px;
-}
+} */
