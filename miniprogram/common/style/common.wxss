@@ -29,7 +29,6 @@
   justify-content: space-between;
 }
 /*                                                                       布局 - 结束*/
-
 /*                                                                       其他*/
 /* 容器宽度设置成100% */
 .box{
@@ -70,7 +69,6 @@ image {
   white-space: normal;
 }
 /*                                                                       其他 - 结束*/
-
 /*                                                                       定位 */
 /*相对定位 */
 .pr {

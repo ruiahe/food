@@ -17,9 +17,13 @@
       </view>
   </view>
   <!-- 搜索框 -->
-  <view class="search-box {{searchObj&&searchObj['isTrue']?'sticky':''}}">
+  <view class="search-box container {{searchObj&&searchObj['isTrue']?'sticky center-space-between':''}}">
       <input class="search" placeholder="搜索菜品"></input>
+      <view class="search-user center-vh" wx:if="{{searchObj&&searchObj['isTrue']}}">
+          <image src="../../common/images/index/user@2x.png"></image>
+      </view>
   </view>
+  <view class="search-box-placeholder" wx:if="{{searchObj&&searchObj['isTrue']}}"></view>
   <!-- 轮播部分 -->
   <swiper class="swiper container" indicator-dots="true" autoplay="true" interval="3000" duration="500" easing-function="linear">
       <block wx:for="{{imgs}}" :for-item="item" wx:key="*this">
@@ -28,50 +32,90 @@
           </swiper-item>
       </block>
   </swiper>
+  <!-- 横向导航 -->
+  <view class="across-nav pr">
+      <view class="across-nav-box center-space-between palt  {{contentObj&&contentObj['isTrue']?'sticky pflt':''}}">
+          <view class="across-nav-left">
+              <view class="center-vh content-item active">
+                  <view class="center-space-between">
+                      <image class="content-icon1" src="../../common/images/index/fire.png"></image>
+                      <text>特价</text>
+                  </view>
+              </view>
+          </view>
+          <navigator class="across-nav-right across-tab center-space-between">
+              <view class="active">全部</view>
+              <view>新品</view>
+              <view>价格</view>
+              <view>销量</view>
+          </navigator>
+      </view>
+      <view class="across-nav-placeholder"></view>
+  </view>
   <!-- 列表部分 -->
-  <view class="content space-between {{contentObj&&contentObj['isTrue']?'sticky':''}}">
+  <view class="content space-between">
     <!-- 竖导航 -->
-    <navigator class="content-vertical">
-        <view class="center-vh content-item active">
-            <view class="center-space-between">
-                <image class="content-icon1" src="../../common/images/index/fire.png"></image>
-                <text>特价</text>
+    <view class="content-box pr">
+        <navigator class="content-vertical {{ navHObj&&navHObj['isTrue']?'sticky pflt':''}}" style="height: {{verticalHeight+'px'}}">
+            <view class="center-vh content-item">
+                <view class="center-space-between">
+                    <image class="content-icon2" src="../../common/images/index/star.png"></image>
+                    <text class="ellipsis-2">精品</text>
+                </view>
             </view>
-        </view>
-        <view class="center-vh content-item">
-            <view class="center-space-between">
-                <image class="content-icon2" src="../../common/images/index/star.png"></image>
-                <text class="ellipsis-2">精品</text>
+            <view class="center-vh content-item">
+                <text class="ellipsis-2">叶菜类</text>
             </view>
-        </view>
-        <view class="center-vh content-item">
-            <text class="ellipsis-2">叶菜类</text>
-        </view>
-        <view class="center-vh content-item">
-            <text class="ellipsis-2">根茎类</text>
-        </view>
-        <view class="center-vh content-item">
-            <text class="ellipsis-2">菌菇类换行情况菌菇类换行情况</text>
-        </view>
-        <view class="center-vh content-item">
-            <text class="ellipsis-2">瓜果类</text>
-        </view>
-        <view class="center-vh content-item">
-            <text class="ellipsis-2">豆类</text>
-        </view>
-        <view class="center-vh content-item">
-            <text class="ellipsis-2">豆制品</text>
-        </view>
-    </navigator>
+            <view class="center-vh content-item">
+                <text class="ellipsis-2">根茎类</text>
+            </view>
+            <view class="center-vh content-item">
+                <text class="ellipsis-2">菌菇类换行情况菌菇类换行情况</text>
+            </view>
+            <view class="center-vh content-item">
+                <text class="ellipsis-2">瓜果类</text>
+            </view>
+            <view class="center-vh content-item">
+                <text class="ellipsis-2">豆类</text>
+            </view>
+            <view class="center-vh content-item">
+                <text class="ellipsis-2">豆制品</text>
+            </view>
+            <view class="center-vh content-item">
+                <view class="center-space-between">
+                    <image class="content-icon2" src="../../common/images/index/star.png"></image>
+                    <text class="ellipsis-2">精品</text>
+                </view>
+            </view>
+            <view class="center-vh content-item">
+                <text class="ellipsis-2">叶菜类</text>
+            </view>
+            <view class="center-vh content-item">
+                <text class="ellipsis-2">根茎类</text>
+            </view>
+            <view class="center-vh content-item">
+                <text class="ellipsis-2">菌菇类换行情况菌菇类换行情况</text>
+            </view>
+            <view class="center-vh content-item">
+                <text class="ellipsis-2">瓜果类</text>
+            </view>
+            <view class="center-vh content-item">
+                <text class="ellipsis-2">豆类</text>
+            </view>
+            <view class="center-vh content-item">
+                <text class="ellipsis-2">豆制品</text>
+            </view>
+        </navigator>
+        <view class="content-vertical-placeholder" style="height: {{verticalHeight+'px'}}"></view>
+    </view>
     <view class='content-list'>
         <!-- 横向导航 -->
-        <navigator class="nav-tab center-space-between">
-            <view class="active">特价</view>
-            <view>全部</view>
+        <!-- <navigator class="nav-tab center-space-between">
+            <view class="active">全部</view>
             <view>新品</view>
             <view>价格</view>
             <view>销量</view>
-        </navigator>
+        </navigator> -->
         <view class="list">
             <view class="list-item center-space-between">
                 <view class="item-img"></view>
