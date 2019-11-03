@@ -118,7 +118,7 @@
         </navigator> -->
         <view class="list">
             <view class="list-item center-space-between">
-                <view class="item-img"></view>
+                <view class="item-img hasNoNum pr"></view>
                 <view class="item-right center-space-between">
                     <view class="item-detail">
                         <view class="detail-title ellipsis-2">山东当季大白菜过冬必备白菜</view>
@@ -132,7 +132,7 @@
                 </view>
             </view>
             <view class="list-item center-space-between">
-                <view class="item-img"></view>
+                <view class="item-img pr special"></view>
                 <view class="item-right center-space-between">
                     <view class="item-detail">
                         <view class="detail-title ellipsis-2">山东当季大白菜过冬必备白菜</view>
@@ -146,7 +146,7 @@
                 </view>
             </view>
             <view class="list-item center-space-between">
-                <view class="item-img"></view>
+                <view class="item-img pr fine"></view>
                 <view class="item-right center-space-between">
                     <view class="item-detail">
                         <view class="detail-title ellipsis-2">山东当季大白菜过冬必备白菜</view>
@@ -160,7 +160,7 @@
                 </view>
             </view>
             <view class="list-item center-space-between">
-                <view class="item-img"></view>
+                <view class="item-img pr hasRed"></view>
                 <view class="item-right center-space-between">
                     <view class="item-detail">
                         <view class="detail-title ellipsis-2">山东当季大白菜过冬必备白菜</view>
@@ -247,9 +247,10 @@
     </view>
   </view>
   <!-- 底部结算入口 -->
-  <view class="bottom pflb center-space-between">
+  <view class="bottom pflb center-space-between hasGray">
       <view class="bottom-img">
-          <image src="../../common/images/index/box.png"></image>
+          <!-- <image src="../../common/images/index/box.png" :if="false"></image> -->
+          <image src="../../common/images/index/box-gray.png" :if="true"></image>
           <text class="bottom-icon part center-vh">25</text>
       </view>
       <view class="bottom-price">
@@ -260,5 +261,9 @@
           <view class="bottom-txt">另需配送费6元/可自取</view>
       </view>
       <button class="bottom-btn center-vh">去结算</button>
+  </view>
+  <!-- 加入购物车的遮罩 -->
+  <view class="pop">
+      
   </view>
 </view>

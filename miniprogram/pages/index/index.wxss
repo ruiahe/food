@@ -219,6 +219,76 @@
   background-position: center;
   background-repeat: no-repeat;
 }
+.item-img.hasNoNum::before{
+  content:'';
+  position: absolute;
+  top:0;
+  width:100%;
+  height:100%;
+  background-color:rgba(197,197,197,0.4);
+}
+.item-img.hasNoNum::after{
+  content:'今日售罄';
+  position:absolute;
+  top:50%;
+  left:50%;
+  width:104rpx;
+  height:44rpx;
+  line-height: 44rpx;
+  font-size:11px;
+  font-family:PingFangSC-Regular,PingFang SC;
+  font-weight:400;
+  color:rgba(255,255,255,1);
+  background:rgba(27,27,27,0.4);
+  text-align: center;
+  border-radius: 8rpx;
+  margin-top:-22rpx;
+  margin-left:-52rpx;
+}
+.item-img.special::after{
+  content:'每日特价';
+  position: absolute;
+  bottom:0;
+  left:0;
+  width:140rpx;
+  height:28rpx;
+  line-height:28rpx;
+  background:linear-gradient(24deg,rgba(255, 110, 101, 1) 0%,rgba(252, 208, 102, 1) 100%);  
+  font-size:11px;
+  font-family:PingFangSC-Regular,PingFang SC;
+  font-weight:400;
+  color:rgba(255,255,255,1);
+  border-bottom-left-radius: 4rpx;
+  border-bottom-right-radius: 4rpx;
+  text-align: center;
+}
+.item-img.fine::after{
+  content:'精品推荐';
+  position: absolute;
+  bottom:0;
+  left:0;
+  width:140rpx;
+  height:28rpx;
+  line-height:28rpx;
+  background:linear-gradient(24deg,rgba(106, 171, 79, 1) 0%,rgba(195, 239, 115, 1) 100%);  
+  font-size:11px;
+  font-family:PingFangSC-Regular,PingFang SC;
+  font-weight:400;
+  color:rgba(255,255,255,1);
+  border-bottom-left-radius: 4rpx;
+  border-bottom-right-radius: 4rpx;
+  text-align: center;
+}
+.item-img.hasRed::after{
+  content:'';
+  position: absolute;
+  right:-6rpx;
+  top:-6rpx;
+  width:18rpx;
+  height:18rpx;
+  border-radius:100%;
+  background-color: rgba(255, 68, 62, 1);
+}
 .item-right{
   padding:4rpx 36rpx 10rpx 0;
   flex:1;
@@ -317,4 +387,12 @@
   font-family:PingFangSC-Medium,PingFang SC;
   font-weight:500;
   color:rgba(255,255,255,1);
+  border:none;
+}
+.bottom.hasGray .price-rel{
+  color:rgba(183,194,201,1);
+}
+.bottom.hasGray .bottom-btn{
+  background:rgba(216,216,216,1);
+  border:none;
 }
